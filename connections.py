@@ -16,5 +16,4 @@ def create_connection():
         print("Error :", e)
         return None
 
-
 conn = create_connection()

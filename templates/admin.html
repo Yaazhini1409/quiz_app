@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>body {
+              background-image: url('https://wallpaperaccess.com/full/3257321.jpg');
+        }
+        #button{
+              position: absolute;
+              top: 7px;
+              right: 10px;}
+    .center{
+                  position: absolute;
+                  top: 40%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 20vw;
+                  height: 22vw;
+                  background: white;
+                  border-radius: 20px;
+                }
+     .small-btn{
+          width: 200px;
+          height: 50px;
+        }
+</style>
+</head>
+<body>
+<form action="/">
+    <button class="btn btn-outline-light" type="submit" id="button" name="retake">Logout</button><br></form>
+<div class="container mt-5 text-center center">
+    <h1 class="text-primary text-uppercase">Welcome, Admin</h1>
+<form action="/admin/score">
+    <br><br><br>
+    <button class="btn btn-outline-primary small-btn"  name="admin" value="score">Scoreboard</button>
+</form>
+<form action="/admin/user">
+    <br><br>
+    <button class="btn btn-outline-primary small-btn"  name="admin" value="user">User list</button>
+</form>
+<form action="/admin/qui">
+    <br><br>
+    <button class="btn btn-outline-primary small-btn"  name="admin" value="quiz">Quizzes</button>
+</form>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>body {
+              background-image: url('https://wallpaperaccess.com/full/3257321.jpg');
+        }
+.center{
+                  position: absolute;
+                  top: 45%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 60vw;
+                  height: 35vw;
+                  background: white;
+                  border-radius: 20px;
+                }</style>
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-primary">
+    <a href="http://127.0.0.1:5000/admin" class="navbar-brand mb-0 text-white h1">Menu</a>
+    <button type="button" data-bs-target="#navbarNav" data-bs-toggle="collapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+     <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item-active">
+                <a href="http://127.0.0.1:5000/admin/score?admin=score#" class="nav-link active">Scoreboard</a>
+            </li>
+            <li class="nav-item-active">
+                <a href="http://127.0.0.1:5000/admin/user?admin=user" class="nav-link active">Users</a>
+            </li>
+            <li class="nav-item-active dropdown">
+                <a href="http://127.0.0.1:5000/admin/qui?admin=quiz" class="nav-link active">Quiz</a>
+
+                    </li>
+                </ul>
+    </div>
+</nav>
+
+
+<div class="container mt-5 center">
+    <br><br><br>
+    <h1 class="text-center text-primary p2 text-uppercase"> Users</h1>
+<div class="container mt-5">
+<table class="table  table-bordered border-primary text-center text-capitalize">
+    <thead>
+    <tr class=" text-uppercase text-primary">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Organization</th>
+        <th>Email</th>
+        <th>Created Date</th>
+
+    </tr>
+    </thead>
+    <tbody class="text-primary">
+    {% for row in table %}
+    <tr>
+        <td>{{row[0]}}</td>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+        <td>{{row[3]}}</td>
+        <td>{{row[4]}}</td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</div>
+</div>
+</body>
+</html>

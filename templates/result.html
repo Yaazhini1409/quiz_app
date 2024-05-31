@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>body {
+              background-image: url('https://wallpaperaccess.com/full/3257321.jpg');
+        }
+        .center{
+                  position: absolute;
+                  top: 40%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 20vw;
+                  height: 17vw;
+                  background: white;
+                  border-radius: 20px;
+                }</style>
+</head>
+<body>
+<h1 class="text-center text-white p2 bg-primary bg-gradient text-uppercase ">Result</h1>
+<div class="container mt-5 text-primary center">
+    <div class="container mt-5">
+<h2 class="text-center"> Your score: {{score}}</h2>
+<div class="text-center">
+<form action="/choose">
+    <br>
+    <button class="btn btn-outline-primary" name="retake">Go to dashboard</button><br>
+</form>
+
+<form action="/">
+    <br>
+    <button class="btn btn-outline-primary">Log out</button>
+</form>
+</div>
+        </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

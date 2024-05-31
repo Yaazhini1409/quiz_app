@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>body {
+              background-image: url('https://wallpaperaccess.com/full/3257321.jpg');
+        }
+    input[type="text"]
+               {
+                font-size:24px;
+               }
+        .center{
+                  position: absolute;
+                  top: 45%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 30vw;
+                  height: 35vw;
+                  background: white;
+                  border-radius: 20px;
+                }
+        input:hover, textarea:hover {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="text-primary text-center container mt-5 center">
+<form method="post" action="/edit/{{qn}}">
+     <h1 class="text-primary"> Edit Question </h1>
+    <div class="container mt-5">
+ <label> Question number</label> <br> <input type="text" name="number" value="{{qn}}" required> <br>
+ <label> Question</label><br> <input type="text" name="qn" value="{{table[0]}}" required><br>
+  <label>Option 1</label><br><input type="text" name="one" value="{{table[1]}}" required><br>
+ <label> Option 2</label><br><input type="text" name="two" value="{{table[2]}}" required><br>
+ <label> Option 3</label><br><input type="text" name="three" value="{{table[3]}}"  required><br>
+ <label> Option 4</label><br><input type="text" name="four" value="{{table[4]}}" required><br>
+ <label> Answer</label><br><input type="text" name="ans" value="{{table[5]}}" required><br><br>
+    <button class="btn btn-outline-primary"  type="submit">Submit</button>
+    </div>
+</form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

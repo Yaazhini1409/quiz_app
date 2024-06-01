@@ -5,7 +5,7 @@ import psycopg2.extras
 
 def get_user_list():
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-    query = """select "ID", "Name", "Organisation", "Email","CreatedDate" from "User" order by "ID" """
+    query = """select "ID", "Name", "Organisation", "Email","CreatedDate" from "User" where id = 1 order by "ID" """
     cur.execute(query)
     table = cur.fetchall()
     return table

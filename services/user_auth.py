@@ -32,10 +32,9 @@ def update_user(name, org, email, password):
     if c:
         return False
     else:
-        Query = """INSERT INTO "User" ("ID", "Name", "Organisation", "Email","id") VALUES (%s, %s,%s,%s,1)"""
-        cur.execute(Query, (id, name, org, email))
+        Query = """INSERT INTO "User" ("Name", "Organisation", "Email") VALUES (%s,%s,%s)"""
+        cur.execute(Query, (name, org, email))
         session['user_id'] = id
-        conn.commit()
         q = """update "User" set "Password" = crypt(%s, gen_salt('md5')) Where "ID" = %s"""
         cur.execute(q, (password, id))
         conn.commit()

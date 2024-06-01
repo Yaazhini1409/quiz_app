@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, session, redirect, url_for, flash, send_file
 
 from services.qa_services import get_no_of_question_list, get_question_count, get_qns, update_question, \
-    update_no_of_question
+    update_no_of_question, add_question
 from services.quiz_services import get_quiz_id, get_data, get_quizzes, add_quiz, get_quiz_name
 from services.user_auth import update_user, check_user
 from services.score_manager import get_score_date, calculate_score, update_score, get_finish, get_user_score, \
@@ -209,7 +209,7 @@ def qui():
         if request.form['quiz'] == "add":
             return redirect(url_for('add'))
         elif request.form['quiz'] == "addqn":
-            return redirect(url_for('AddQuestion'))
+            return redirect(url_for('add_question'))
         else:
             for key, value in request.form.items():
                 session['quiz'] = value
@@ -227,7 +227,7 @@ def qui():
 def qnss():
     if request.method == 'POST':
         if request.form['quiz'] == "addqn":
-            return redirect(url_for('AddQuestion'))
+            return redirect(url_for('add_question'))
     else:
         table = get_qns(session['id'])
         return render_template('questions.html', table=table)
@@ -265,7 +265,7 @@ def add():
 
 
 @app.route('/add_question', methods=['GET', 'POST'])
-def add_question():
+def add_quest():
     if request.method == "POST":
         print("session", session['id'])
         num = request.form['number']
@@ -280,7 +280,7 @@ def add_question():
         flash('Question added successfully')
         return redirect('/admin/qui/qns')
     else:
-        return render_template('AddQuestion.html')
+        return render_template('Addquestion.html')
 
 
 @app.route('/certificate/<quiz_id>')

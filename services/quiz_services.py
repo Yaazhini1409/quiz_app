@@ -32,7 +32,7 @@ def get_quiz_id(name):
     query = """select "ID" from "Quiz" where "QuizName" = %s """
     cur.execute(query, (name,))
     c = cur.fetchall()
-    print("C", c[0][0])
+    print("C", c)
     return c[0][0]
 
 

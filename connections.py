@@ -5,11 +5,11 @@ import psycopg2.extras
 def create_connection():
     try:
         conn = psycopg2.connect(
-            host="localhost",
-            database="postgres",
+            host="host",
+            database="database",
             port=5432,
-            user="postgres",
-            password="Nero7Cami13"
+            user="user",
+            password=" password"
         )
         return conn
     except psycopg2.Error as e:
